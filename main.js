@@ -41,7 +41,12 @@ resetButton.textContent = 'Reset';
 buttons.appendChild(resetButton);
 resetButton.addEventListener('click', () => {
     canvas.remove();
-    createGrid(sizeOfGrid);
+    
+    let userSize = Number(prompt('What size you want?'));
+    while (userSize > 100) {
+        userSize = Number(prompt('Pick a smaller number than 100'));
+    }
+    createGrid(userSize);
 })
 
 createGrid(sizeOfGrid);
