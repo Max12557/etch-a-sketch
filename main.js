@@ -21,7 +21,8 @@ const createGrid = (amtOfGrips) => {
 
             // adding mouseenter to change the background color
             gridBox.addEventListener('mouseenter', () => {
-                gridBox.style.backgroundColor = 'black';
+                randomColor = Math.floor(Math.random()*16777215).toString(16);
+                gridBox.style.backgroundColor = '#' + randomColor;
             })
             row.appendChild(gridBox);
         }
