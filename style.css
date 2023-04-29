@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+#root {
+    display: flex;
+    margin: 20px 16vw;
+    gap: 100px;
+}
+
 #canvas {
     display: flex;
 }
@@ -11,4 +17,11 @@
 .grid-box {
     border: 1px solid black;
     background: whitesmoke;
+}
+
+.button {
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    border: solid 1px black;
 }

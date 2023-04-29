@@ -1,8 +1,13 @@
+const root = document.querySelector('#root')
 const sizeOfGrid = 32;
 
-const canvas = document.querySelector('#canvas');
-
 const createGrid = (amtOfGrips) => {
+
+    // create a canvas with id
+    const canvas = document.createElement('div');
+    canvas.setAttribute('id', 'canvas')
+    root.appendChild(canvas);
+
     for (let i = 0; i < amtOfGrips; i++) {
         const row = document.createElement('div');
         row.classList.add('grid-row');
@@ -18,13 +23,26 @@ const createGrid = (amtOfGrips) => {
             gridBox.addEventListener('mouseenter', () => {
                 gridBox.style.backgroundColor = 'black';
             })
-
             row.appendChild(gridBox);
         }
-
         canvas.append(row);
     }
 }
+
+// create buttons
+const buttons = document.createElement('div');
+buttons.classList.add('buttons');
+root.appendChild(buttons);
+
+// create a button for reset the canvas
+const resetButton = document.createElement('button');
+resetButton.classList.add('button')
+resetButton.textContent = 'Reset';
+buttons.appendChild(resetButton);
+resetButton.addEventListener('click', () => {
+    canvas.remove();
+    createGrid(sizeOfGrid);
+})
 
 createGrid(sizeOfGrid);
 
